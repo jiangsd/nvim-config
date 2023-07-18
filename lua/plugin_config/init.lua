@@ -5,6 +5,7 @@ require("plugin_config.completion")
 require("plugin_config.commenter")
 require("plugin_config.colorscheme")
 require("plugin_config.lualine")
+require("plugin_config.dap")
 
 vim.opt.termguicolors = true
 require("bufferline").setup{}
@@ -17,3 +18,7 @@ require("bufferline").setup{}
 -- }
 
 require("nvim-autopairs").setup{}
+
+require("toggleterm").setup()
+
+require("mason").setup()
