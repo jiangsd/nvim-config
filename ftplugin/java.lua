@@ -21,9 +21,9 @@ local config = {
   cmd = {
 
     -- 💀
-    'java', -- or '/path/to/java17_or_newer/bin/java'
+    -- 'java', -- or '/path/to/java17_or_newer/bin/java'
             -- depends on if `java` is in your $PATH env variable and if it points to the right version.
-
+    'c:/tools/openjdk-17.0.5+8-windows-x64/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -35,14 +35,16 @@ local config = {
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
     -- 💀
-    '-jar', 'c:/tools/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+    -- '-jar', 'c:/tools/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+    '-jar', 'c:/tools/jdtls-1.25/plugins/org.eclipse.equinox.launcher_1.6.500.v20230622-2056.jar',
          -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
          -- Must point to the                                                     Change this to
          -- eclipse.jdt.ls installation                                           the actual version
 
 
     -- 💀
-    '-configuration', 'c:/tools/jdtls/config_win',
+    -- '-configuration', 'c:/tools/jdtls/config_win',
+    '-configuration', 'c:/tools/jdtls-1.25/config_win',
                     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
                     -- Must point to the                      Change to one of `linux`, `win` or `mac`
                     -- eclipse.jdt.ls installation            Depending on your system.
@@ -56,7 +58,9 @@ local config = {
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
+  -- root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew', 'settings.gradle'}),
+  -- root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew', 'settings.gradle'}),
+  root_dir = vim.fs.dirname(vim.fs.find({'settings.gradle', '.git', 'gradlew', 'mvnw'}, { upward = true })[1]),
 
   -- capabilities = capabilities,
 
