@@ -80,7 +80,9 @@ local config = {
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {}
+    bundles = {
+        vim.fn.glob("c:/Users/songdai_jiang/AppData/Local/nvim-data/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.47.0.jar", 1)
+    }
   },
 }
 -- This starts a new client & server,

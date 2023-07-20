@@ -34,5 +34,34 @@ function attach_to_debug()
     dap.continue()
 end
 
+function attach_to_debug(app_host, app_port)
+    local dap = require('dap')
+    dap.configurations.java = {
+        {
+            type = 'java',
+            request = 'attach',
+            name = 'attach testing5',
+            hostName = app_host,
+            port = app_port,
+        },
+    }
+    dap.continue()
+end
 
 vim.keymap.set('n', '<leader>da', ':lua attach_to_debug()<CR>', {noremap = true, silent = true})
+
+
+function show_dap()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+    -- widgets.hover()
+end
+
+vim.keymap.set('n', 'gs', ':lua show_dap()<CR>', {noremap = true, silent = true})
+
+
+function reload_continue()
+    local dap = require'dap'
+    package.load['plugin_config.dap_config'] = nil
+    require('plugin_config.dap_config')
+end

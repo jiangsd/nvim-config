@@ -23,6 +23,8 @@ set bs=2
 
 set belloff=all
 
+set shell=cmd
+
 " call plug#begin()
 
 " Plug 'flazz/vim-colorschemes'

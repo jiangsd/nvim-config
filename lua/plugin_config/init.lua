@@ -6,6 +6,7 @@ require("plugin_config.commenter")
 require("plugin_config.colorscheme")
 require("plugin_config.lualine")
 require("plugin_config.dap")
+require("plugin_config.dap_config")
 
 vim.opt.termguicolors = true
 require("bufferline").setup{}
