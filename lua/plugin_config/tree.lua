@@ -4,13 +4,13 @@ require("nvim-tree").setup({
 
     sort_by = "case_sensitive",
     view = {
-        adaptive_size = true,
+        adaptive_size = false,
         width = 30,
-        mappings = {
-            list = {
-                { key = "u", action = "dir_up" },
-            },
-        },
+        -- mappings = {
+        --     list = {
+        --         { key = "u", action = "dir_up" },
+        --     },
+        -- },
     },
     renderer = {
         group_empty = true,
@@ -20,7 +20,11 @@ require("nvim-tree").setup({
     },
     git = {
         timeout = 4000,
-    }
+    },
+
+    -- window = {
+    --     auto_expand_width=false
+    -- }
 })
 
 vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>', {noremap = true, silent = true})

@@ -10,6 +10,17 @@ vim.keymap.set('n', '<leader>B', ':lua require"dap".set_breakpoint(vim.fn.input(
 vim.keymap.set('n', '<leader>bl', ':lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log: "))<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>dr', ':lua require"dap".repl.open()<CR>', {noremap = true, silent = true})
 
+vim.keymap.set({'n', 'v'}, '<Leader>dh', function() require('dap.ui.widgets').hover() end)
+vim.keymap.set({'n', 'v'}, '<Leader>dp', function() require('dap.ui.widgets').preview() end)
+vim.keymap.set('n', '<Leader>df', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+end)
+
 -- dap.configurations.java = {
 --     {
 --         type = 'java',

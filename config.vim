@@ -25,6 +25,9 @@ set belloff=all
 
 set shell=cmd
 
+set updatetime=100
+
+let g:nvim_tree_width=40
 " call plug#begin()
 
 " Plug 'flazz/vim-colorschemes'

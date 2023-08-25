@@ -24,9 +24,9 @@ local plugins = {
 
   'nvim-tree/nvim-tree.lua',
   -- 'wbthomason/packer.nvim',
-  'neovim/nvim-lspconfig', 
+  'neovim/nvim-lspconfig',
 
-  'hrsh7th/nvim-cmp', 
+  'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
@@ -34,7 +34,7 @@ local plugins = {
 
   'saadparwaiz1/cmp_luasnip',
   'L3MON4D3/LuaSnip',
-  
+
   'mfussenegger/nvim-jdtls',
 
   {
@@ -44,7 +44,7 @@ local plugins = {
 
   {
       'akinsho/bufferline.nvim', version = "*",
-      dependencies = {'nvim-tree/nvim-web-devicons'} 
+      dependencies = {'nvim-tree/nvim-web-devicons'}
   },
 
   {
@@ -56,20 +56,32 @@ local plugins = {
   'tpope/vim-surround',
   'preservim/nerdcommenter',
   {
-      'ellisonleao/gruvbox.nvim'  
+      'ellisonleao/gruvbox.nvim'
   },
   {
-      'akinsho/toggleterm.nvim', version = "*", config = true 
+      'akinsho/toggleterm.nvim', version = "*", config = true
   },
   'mfussenegger/nvim-dap',
   'rcarriga/cmp-dap',
   {
       'williamboman/mason.nvim',
       build = ':MasonUpdate'
-  }
+  },
+  'mhinz/vim-signify',
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "MunifTanjim/nui.nvim",
+    }
+  },
+
 
 }
-  
+
 local opts = {}
 
 require("lazy").setup(plugins, opts)

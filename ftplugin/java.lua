@@ -60,7 +60,7 @@ local config = {
   -- One dedicated LSP server & client will be started per unique root_dir
   -- root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew', 'settings.gradle'}),
   -- root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew', 'settings.gradle'}),
-  root_dir = vim.fs.dirname(vim.fs.find({'settings.gradle', '.git', 'gradlew', 'mvnw'}, { upward = true })[1]),
+  root_dir = vim.fs.dirname(vim.fs.find({'settings.gradle', '.git', 'pom.xml', 'gradlew', 'mvnw'}, { upward = true })[1]),
 
   -- capabilities = capabilities,
 
