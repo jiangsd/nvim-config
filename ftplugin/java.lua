@@ -23,7 +23,7 @@ local config = {
     -- 💀
     -- 'java', -- or '/path/to/java17_or_newer/bin/java'
             -- depends on if `java` is in your $PATH env variable and if it points to the right version.
-    'c:/tools/openjdk-17.0.5+8-windows-x64/bin/java',
+    'c:/tools/jdk-17.0.6/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
